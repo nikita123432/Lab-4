@@ -1,16 +1,31 @@
-# This is a sample Python script.
+class Calculator:
+    def __init__(self, num1, num2):
+        self.num1 = num1
+        self.num2 = num2
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    def input_data(self):
+        self.num1 = int(input("Введите первое число: "))
+        self.num2 = int(input("Введите второе число: "))
+
+    def sum(self):
+        return self.num1 + self.num2
+
+    def difference(self):
+        return self.num1 - self.num2
+
+    def multiplication(self):
+        return self.num1 * self.num2
+
+    def division(self):
+        if self.num2 == 0:
+            print("Деление на ноль невозможно")
+        else:
+            return self.num1 / self.num2
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+calc = Calculator(0, 0)
+calc.input_data()
+print("Сумма чисел:", calc.sum())
+print("Разность чисел:", calc.difference())
+print("Произведение чисел:", calc.multiplication())
+print("Частное чисел:", calc.division())
